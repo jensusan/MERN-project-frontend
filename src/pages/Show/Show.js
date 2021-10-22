@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {Wrapper} from "./Show-style"
 const Show = (props) => {
     const id = props.match.params.id;
     const products = props.products;
@@ -31,10 +32,10 @@ const Show = (props) => {
     }
 
     return(
-        <div>
+        <Wrapper>
             <h1>{product.name}</h1>
             <img src={product.image} alt={product.name} />
-            <h3>${product.price}</h3>
+            <h2>${product.price}</h2>
             <h3>product details</h3>
             <p>{product.description}</p>
             <ul>
@@ -48,9 +49,9 @@ const Show = (props) => {
                 ))}
             <form onSubmit={handleSubmit}>
                 <input type="text" value={newReview} onChange={handleChange}/>
-                <input type="submit" value="submit" />
+                <input className="button" type="submit" value="ADD REVIEW" />
             </form>
-        </div>
+        </Wrapper>
     )
 };
 

@@ -24,4 +24,13 @@ export const Container = styled.div`
         height: auto;
 
     }
+
+    @media screen and (max-width: 500px) {
+        width: 350px;
+        padding: 5px;
+        
+        img {
+            width: 340px;
+        }
+    }
 `;

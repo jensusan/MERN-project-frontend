@@ -7,8 +7,9 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
     h1 {
         font-size: 72px;
+        text-transform: uppercase;
         background: rgb(176,176,176);
-        background: radial-gradient(circle, rgba(176,176,176,1) 0%, rgba(9,9,9,1) 100%);
+        background: radial-gradient(circle, rgba(176,176,176,1) 35%, rgba(9,9,9,1) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
