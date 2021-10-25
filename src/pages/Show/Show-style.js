@@ -23,6 +23,8 @@ export const Wrapper = styled.div`
     h3 {
         font-size: 26px;
         text-transform: uppercase;
+        border-top: 1px solid #e2e2e2;
+        padding-top: 20px;
     }
 
     p {
@@ -36,6 +38,25 @@ export const Wrapper = styled.div`
 
     .button {
         margin-left: 10px;
+        cursor: pointer;
+    }
+
+    @media screen and (min-width: 990px) {
+        display: flex;
+        
+        h1 {
+            text-align: left;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        h1 {
+            font-size: 38px;
+        }
+
+        img {
+            width: 80%;
+        }
     }
 `;
 

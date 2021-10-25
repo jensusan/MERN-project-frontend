@@ -22,7 +22,10 @@ export const Container = styled.div`
     img {
         width: 400px;
         height: auto;
+    }
 
+    img:hover {
+        transform: scale(1.1);
     }
 
     @media screen and (max-width: 500px) {

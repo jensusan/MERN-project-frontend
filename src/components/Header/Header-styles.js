@@ -5,6 +5,9 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     h1 {
         font-size: 72px;
         text-transform: uppercase;
@@ -13,8 +16,25 @@ export const Content = styled.div`
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
-        @media screen and (max-width: 430px) {
+        @media screen and (max-width: 455px) {
             font-size: 30px;
         }
+    }
+
+    .cart {
+        font-size: 25px;
+        margin-right: 40px;
+        padding: 2px;
+        background: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    span {
+        padding: 5px;
+    }
+
+    i {
+        font-size: 30px;
     }
 `;
