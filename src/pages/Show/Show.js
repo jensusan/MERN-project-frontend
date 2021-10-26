@@ -1,5 +1,6 @@
-import {useState} from "react";
+import {useState, useContext} from "react";
 import AddToCartForm from "../../components/Cart/AddToCartForm";
+import CartContext from "../../store/cart-context";
 import {Wrapper} from "./Show-style"
 
 
@@ -7,6 +8,16 @@ const Show = (props) => {
     const id = props.match.params.id;
     const products = props.products;
     const product = products.find(p => p._id === id)
+    const cartCtx = useContext(CartContext);
+    
+    const handleAddToCart = qty => {
+        cartCtx.addItem({
+            id: id,
+            name: product.name,
+            qty: qty,
+            price: product.price
+        });
+    }
 
     //form
     const [reviewForm, setReviewForm] = useState(product.reviews)
@@ -47,7 +58,7 @@ const Show = (props) => {
                     <li>{bullet}</li>
                 ))}
             </ul>
-            <AddToCartForm />
+            <AddToCartForm onAddToCart={handleAddToCart}/>
             <h3>reviews</h3>
             {reviewForm.map((review, index) => (
                     <p key={index}>{review}</p>

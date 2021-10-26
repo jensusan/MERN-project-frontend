@@ -5,7 +5,7 @@ import Main from "./components/Main";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Cart from './components/Cart/Cart';
-import CartProvider from './state/CartProvider';
+import CartProvider from './store/CartProvider';
 
 function App() {
   const [cartVisible, setCartVisible] = useState(false);
@@ -19,7 +19,7 @@ function App() {
   };
   
   return (
-    <CartProvider className="App">
+    <CartProvider>
       {cartVisible && <Cart onClose={handleHideCart}/>}
       <Header onShowCart={handleShowCart}/>
       <Main />

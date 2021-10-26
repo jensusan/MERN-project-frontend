@@ -10,3 +10,10 @@ export const Button = styled.button`
     margin: 10px;
     cursor: pointer;
 `;
+
+export const Content = styled.div`
+    text-transform: uppercase;
+    p {
+        text-transform: uppercase;
+    }
+`;

@@ -1,8 +1,15 @@
+import {useContext} from "react";
 import {Wrapper, Content} from "./Header-styles";
 import {Link} from "react-router-dom";
+import CartContext from "../../store/cart-context";
 
 
 const Header = (props) => {
+    const cartCtx = useContext(CartContext);
+    const numOfItems = cartCtx.items.reduce((curNum, item) => {
+        return curNum + item.qty
+    }, 0)
+
     return(
         <Wrapper>
             <Content>
@@ -13,7 +20,7 @@ const Header = (props) => {
                     <span>
                         <i className="fa fa-shopping-bag"></i>
                     </span>
-                    <span>3</span>
+                    <span>{numOfItems}</span>
                 </button>
             </Content>
         </Wrapper>
