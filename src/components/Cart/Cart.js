@@ -30,11 +30,11 @@ const Cart = (props) => {
             <Wrapper>
                 <button className='close' onClick={props.onClose}><i className="fa fa-window-close"></i>Close</button>
                 <ul>
-                {cartItems}
+                    {cartItems}
                 </ul>
                 <div className="checkoutItems">
-                <h3>Total Amount: ${cartCtx.totalAmount.toFixed(2)}</h3>
-                <button className="checkout">checkout</button>
+                    <h3>Total Amount: ${cartCtx.totalAmount.toFixed(2)}</h3>
+                    <button className="checkout">checkout</button>
                 </div>
             </Wrapper>
         </Modal>

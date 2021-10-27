@@ -10,6 +10,7 @@ const Show = (props) => {
     const product = products.find(p => p._id === id)
     const cartCtx = useContext(CartContext);
     
+    //add items to cart
     const handleAddToCart = qty => {
         cartCtx.addItem({
             id: id,
@@ -19,9 +20,9 @@ const Show = (props) => {
         });
     }
 
-    //form
+    //review form
     const [reviewForm, setReviewForm] = useState(product.reviews)
-    const [newReview, setNewReview] = useState()
+    const [newReview, setNewReview] = useState('')
 
     const handleChange = (event) => {
         setNewReview(event.target.value)
@@ -31,9 +32,10 @@ const Show = (props) => {
         event.preventDefault();
         setReviewForm((prevState) => (product.reviews = [...prevState, newReview]))
         setNewReview('')
-        updateReviews();
+        updateReviews(product);
     }
 
+    //send reviews to backend 
     const updateReviews = async () => {
         await fetch(`${props.URL}${id}`, {
             method: "PUT",
@@ -49,23 +51,23 @@ const Show = (props) => {
             <h1>{product.name}</h1>
             <img src={product.image} alt={product.name} />
             <div>
-            <h2>${product.price}</h2>
-            <h3>product details</h3>
-            <p>{product.description}</p>
-            <ul>
-                {product.descriptionBullets.map((bullet) => (
-                    <li>{bullet}</li>
+                <h2>${product.price}</h2>
+                <h3>product details</h3>
+                <p>{product.description}</p>
+                <ul>
+                {product.descriptionBullets.map((bullet, index) => (
+                    <li key={index}>{bullet}</li>
                 ))}
-            </ul>
-            <AddToCartForm onAddToCart={handleAddToCart}/>
-            <h3>reviews</h3>
-            {reviewForm.map((review, index) => (
+                </ul>
+                <AddToCartForm onAddToCart={handleAddToCart}/>
+                <h3>reviews</h3>
+                {reviewForm.map((review, index) => (
                     <p key={index}>{review}</p>
                 ))}
-            <form onSubmit={handleSubmit}>
-                <input type="text" value={newReview} onChange={handleChange}/>
-                <input className="button" type="submit" value="ADD REVIEW" />
-            </form>
+                <form onSubmit={handleSubmit}>
+                    <input type="text" value={newReview} onChange={handleChange}/>
+                    <input className="button" type="submit" value="ADD REVIEW" />
+                </form>
             </div>
         </Wrapper>
     )

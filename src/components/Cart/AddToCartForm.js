@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {Button, Content} from './AddToCart-styles';
+
 const AddToCartForm = (props) => {
     const [enteredQty, setEnteredQty] = useState(0);
     const [cartMessage, setCartMessage] = useState('');
@@ -8,7 +9,6 @@ const AddToCartForm = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const enteredQtyNum = +enteredQty;
-        console.log(enteredQtyNum)
         if(enteredQtyNum === 0) {
             setCartMessage("Please enter a quantity more than 0")
             return;
@@ -21,16 +21,16 @@ const AddToCartForm = (props) => {
     }
     return (
         <Content>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor='quantity'>Quantity: </label>
-            <input 
+            <form onSubmit={handleSubmit}>
+                <label htmlFor='quantity'>Quantity: </label>
+                <input 
                 onChange={handleChange}
                 label='quantity' 
                 value= {enteredQty}
                 />
-            <Button>ADD TO CART</Button>
-            <p>{cartMessage}</p>
-        </form>
+                <Button>ADD TO CART</Button>
+                <p>{cartMessage}</p>
+            </form>
         </Content>
     )
 };
