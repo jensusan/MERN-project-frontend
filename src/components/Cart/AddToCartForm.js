@@ -27,11 +27,7 @@ const AddToCartForm = (props) => {
                 onChange={handleChange}
                 label='quantity' 
                 value= {enteredQty}
-                input={{   id: 'quantity',
-                type: 'number',
-                min: "1",
-                step: '1',
-                defaultValue: '1'}}/>
+                />
             <Button>ADD TO CART</Button>
             <p>{cartMessage}</p>
         </form>

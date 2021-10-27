@@ -16,4 +16,7 @@ export const Content = styled.div`
     p {
         text-transform: uppercase;
     }
+    input {
+        width: 30px;
+    }
 `;

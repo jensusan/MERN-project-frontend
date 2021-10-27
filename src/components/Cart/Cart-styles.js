@@ -31,5 +31,24 @@ export const Wrapper = styled.div`
         cursor: pointer;
     }
 
+    span {
+        margin: 20px;
+    }
+
+    div {
+        margin: 30px;
+    }
+
+    li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .checkoutItems {
+        display: flex;
+        justify-content: center;
+    }
     
 `;

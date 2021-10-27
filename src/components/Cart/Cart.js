@@ -1,18 +1,41 @@
+import {useContext} from "react";
 import Modal from "./Modal";
 import {Wrapper} from "./Cart-styles";
+import CartContext from "../../store/cart-context";
 
 const Cart = (props) => {
-    const cartItems = <ul>{[{id: 4, name: "west pink leather", price: 199.95}].map((item) => (<li>{item.name}</li>))}</ul>
+    const cartCtx = useContext(CartContext);
+
+    const handleRemoveItem = id => {
+
+    };
+
+    const handleAddItem = item => {};
+
+    const cartItems = cartCtx.items.map((item) => (<li key={item.id}>
+        <h2>{item.name}</h2>
+        <div>
+            <span>${item.price.toFixed(2)}</span>
+            <span>QTY: {item.qty}</span>
+        </div>
+        
+        {/* <div>
+            <button onClick={handleRemoveItem}>-</button>
+            <button onClick={handleAddItem}>+</button>
+        </div> */}
+        </li>
+   ))
     return(
         <Modal onClose={props.onClose}>
             <Wrapper>
                 <button className='close' onClick={props.onClose}><i className="fa fa-window-close"></i>Close</button>
-            {cartItems}
-                <div>
-                    <span>Total Amount: </span>
-                    <span>$35.62</span>
-                </div>
+                <ul>
+                {cartItems}
+                </ul>
+                <div className="checkoutItems">
+                <h3>Total Amount: ${cartCtx.totalAmount.toFixed(2)}</h3>
                 <button className="checkout">checkout</button>
+                </div>
             </Wrapper>
         </Modal>
     )
