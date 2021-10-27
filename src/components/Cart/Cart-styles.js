@@ -4,11 +4,12 @@ export const Wrapper = styled.div`
     background-color:white;
     border: 3px solid black;
     text-transform: uppercase;
+    box-sizing: border-box;
 
     .close {
         border: none;
+        margin-left: 85%;
         background-color: white;
-        margin-left: 93%;
         font-size: 15px;
         margin-top: 5px;
         text-transform: uppercase;
@@ -51,4 +52,15 @@ export const Wrapper = styled.div`
         justify-content: center;
     }
     
+    @media screen and (max-width: 505px) {
+       div {
+          display: flex;
+          flex-direction: column;
+       }
+
+       span {
+           margin: 5px;
+       }
+    }
+
 `;

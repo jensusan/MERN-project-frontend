@@ -20,4 +20,14 @@ export const Wrapper = styled.div`
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     z-index: 30;
     animation: slide-down 300ms ease-out forwards;
+
+    @media screen and (max-width: 1040px) {
+        width: 80%;
+        left: 10%;
+    }
+
+    @media screen and (max-width: 650px) {
+        width: 95%;
+        left: 3%;
+    }
 `;
