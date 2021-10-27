@@ -19,7 +19,7 @@ A full-stack MERN e-commerce app where users can browse shoes, add them to their
 
 ## Gettting Started
 
-[Click Here]() to see the deployed app.
+[Click Here](https://practical-swartz-82b2cf.netlify.app/) to see the deployed app.
 
 ## Future Enhancments
 

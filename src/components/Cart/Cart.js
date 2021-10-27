@@ -6,11 +6,11 @@ import CartContext from "../../store/cart-context";
 const Cart = (props) => {
     const cartCtx = useContext(CartContext);
 
-    const handleRemoveItem = id => {
+    // const handleRemoveItem = id => {
 
-    };
+    // };
 
-    const handleAddItem = item => {};
+    // const handleAddItem = item => {};
 
     const cartItems = cartCtx.items.map((item) => (<li key={item.id}>
         <h2>{item.name}</h2>
