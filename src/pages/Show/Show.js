@@ -35,7 +35,6 @@ const Show = (props) => {
     }
 
     const updateReviews = async () => {
-        console.log(id)
         await fetch(`${props.URL}${id}`, {
             method: "PUT",
             headers: {
